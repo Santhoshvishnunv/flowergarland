@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaadi Garland Studio - Bespoke Wedding Garlands</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>🌸 Shaadi Garland Studio</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#upload">Upload Listing</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="cart-icon">
+                    <a href="#cart" id="cartBtn">
+                        🛒 <span id="cartCount">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2 class="hero-title">Wedding Garlands That Tell Your Story</h2>
+            <p class="hero-subtitle">Hand-tied malas for muhurtham, engagements, and reception entries—crafted by artisans with 20+ years of family tradition.</p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary">Browse Collections</a>
+                <a href="#order-guide" class="btn btn-secondary">Plan My Order</a>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section-title">How Ordering Works</h2>
+            <p class="section-subtitle">A streamlined 3-step flow so you can focus on the celebration</p>
+            <div class="process-grid">
+                <div class="process-card">
+                    <span class="process-icon">🛒</span>
+                    <h3>Select Your Garlands</h3>
+                    <p>Mix and match from our curated bridal, groom, and entourage malas. Each design lists lead times and flower choices.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-icon">📝</span>
+                    <h3>Share Event Details</h3>
+                    <p>Tell us your muhurtham, venue, delivery slot, and any color motifs. We’ll confirm availability in minutes.</p>
+                </div>
+                <div class="process-card">
+                    <span class="process-icon">🎉</span>
+                    <h3>We Craft & Deliver</h3>
+                    <p>Garlands are made the night prior with refrigerated storage, then delivered with hydration boxes for worry-free ceremonies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Signature Wedding Collection</h2>
+            <p class="section-subtitle">Choose malas matched to every ritual—mix blossoms, lengths, and embellishments.</p>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- Products will be dynamically loaded -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section id="upload" class="add-listing">
+        <div class="container">
+            <div class="upload-card">
+                <div class="upload-text">
+                    <h2>Upload Your Flower Listing</h2>
+                    <p>Share the garlands you craft—add a photo, pricing, and shop contact so couples can reach you instantly.</p>
+                    <ul>
+                        <li>📸 High-quality flower photo (JPG/PNG)</li>
+                        <li>💰 Price for a pair of garlands or single mala</li>
+                        <li>🏪 Shop name + WhatsApp number</li>
+                        <li>✉️ Email for order confirmations</li>
+                    </ul>
+                </div>
+                <form id="listingForm" class="upload-form">
+                    <div class="form-group">
+                        <label for="listingImage">Flower Photo</label>
+                        <input type="file" id="listingImage" accept="image/*" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="listingName">Garland Name</label>
+                        <input type="text" id="listingName" placeholder="Eg. Signature Lotus Garland" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="listingPrice">Price (₹)</label>
+                            <input type="number" id="listingPrice" placeholder="Eg. 4500" min="0" step="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="listingLeadTime">Lead Time</label>
+                            <input type="text" id="listingLeadTime" placeholder="Eg. 3 days pre-order" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="listingDescription">Description</label>
+                        <textarea id="listingDescription" rows="3" placeholder="Describe the flowers, colors, and ceremonies" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="listingShop">Shop Name</label>
+                            <input type="text" id="listingShop" placeholder="Eg. Lakshmi Garland Studio" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="listingPhone">Phone / WhatsApp</label>
+                            <input type="tel" id="listingPhone" placeholder="+91 9XXXX XXXXX" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="listingEmail">Email</label>
+                        <input type="email" id="listingEmail" placeholder="orders@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="listingTags">Tags (comma separated)</label>
+                        <input type="text" id="listingTags" placeholder="Bride, Premium, Jasmine">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Listing To Website</button>
+                    <p class="upload-hint">Your listing saves to this browser so you can edit anytime.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Guide Section -->
+    <section id="order-guide" class="order-guide">
+        <div class="container">
+            <div class="order-guide-content">
+                <div>
+                    <h2>Ordering For A Wedding?</h2>
+                    <p>Reserve at least 5 days before the event to lock in premium blooms sourced from the Madurai and Bengaluru markets.</p>
+                    <ul class="order-checklist">
+                        <li>✅ Bride & groom garlands with coordinated lengths</li>
+                        <li>✅ Extra malas for welcoming rituals and photo sessions</li>
+                        <li>✅ Custom mix of roses, tuberose, jasmine, chrysanthemum, orchids</li>
+                        <li>✅ Pasupu kumkuma trays, boutonnieres, and hair florals on request</li>
+                    </ul>
+                </div>
+                <div class="order-highlight">
+                    <p class="lead">Need something you don’t see?</p>
+                    <p>Share a reference photo, palette, or Pinterest board. We’ll recreate the look with locally sourced flowers.</p>
+                    <a href="#contact" class="btn btn-primary">Request A Custom Design</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Rooted In Tradition</h2>
+                    <p>We are a family-run garland workshop led by master florist Arjun, who has created malas for over 500 South Indian weddings. Each strand is hand-strung the traditional way using cotton thread, ensuring flexibility, fragrance, and structural integrity.</p>
+                    <p>We work closely with decorators and planners to match mandap colors, sari borders, and jewellery tones—so every photo feels cohesive.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🌺</span>
+                            <h3>Fresh Flowers</h3>
+                            <p>Only the finest, freshest flowers</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">✋</span>
+                            <h3>Handcrafted</h3>
+                            <p>Made with care and attention</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🚚</span>
+                            <h3>Fast Delivery</h3>
+                            <p>Quick and reliable shipping</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Custom Requirements & Add-ons</h2>
+            <p class="section-subtitle">Need stage florals, hair strings, or prasadam trays? Tell us what you have in mind.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <h3>WhatsApp / Call</h3>
+                            <p>+91 90000 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📧</span>
+                        <div>
+                            <h3>Email</h3>
+                            <p>orders@shaadigarlandstudio.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <h3>Workshop</h3>
+                            <p>8/27 Flower Bazaar Road, Mylapore, Chennai</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone / WhatsApp" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="customNeeds" placeholder="What extra floral pieces do you need?">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Share reference links, colors, or instructions" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Custom Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be dynamically loaded -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Total: <span id="cartTotal">₹0</span></strong>
+                </div>
+                <button class="btn btn-primary" id="checkoutBtn">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content order-modal">
+            <span class="close order-close">&times;</span>
+            <h2>Confirm Your Wedding Order</h2>
+            <p class="order-modal-subtitle">We’ll call within 30 minutes to verify flower availability.</p>
+            <div id="orderReview" class="order-review">
+                <!-- Order summary injected here -->
+            </div>
+            <form id="orderForm" class="order-form">
+                <div class="form-row">
+                    <input type="text" id="clientName" placeholder="Your Full Name" required>
+                    <input type="tel" id="clientPhone" placeholder="Phone / WhatsApp" required>
+                </div>
+                <div class="form-row">
+                    <input type="email" id="clientEmail" placeholder="Email for confirmations" required>
+                    <input type="text" id="eventType" placeholder="Event (Wedding, Engagement...)" required>
+                </div>
+                <div class="form-row">
+                    <input type="date" id="eventDate" required>
+                    <input type="time" id="eventTime" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" id="venue" placeholder="Venue & City" required>
+                    <select id="deliverySlot" required>
+                        <option value="">Preferred Delivery Slot</option>
+                        <option value="Early Morning (4-6 AM)">Early Morning (4-6 AM)</option>
+                        <option value="Morning (6-9 AM)">Morning (6-9 AM)</option>
+                        <option value="Afternoon (12-3 PM)">Afternoon (12-3 PM)</option>
+                        <option value="Evening (3-6 PM)">Evening (3-6 PM)</option>
+                    </select>
+                </div>
+                <textarea id="orderNotes" rows="4" placeholder="Share sari colors, preferred flowers, length, or any rituals"></textarea>
+                <button type="submit" class="btn btn-primary">Submit Order Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Shaadi Garland Studio. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
